@@ -1,3 +1,4 @@
+// copyright [2018] <will howard>
 IDIR =../include
 CC=gcc
 CFLAGS=-I$(IDIR)
@@ -15,12 +16,12 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
 $(ODIR)/%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+    $(CC) -c -o $@ $< $(CFLAGS)
 
 hellomake: $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+    $(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+    rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
